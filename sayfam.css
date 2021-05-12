@@ -1,0 +1,63 @@
+<style type="text/css">
+	div{
+		text-align: center;
+	}
+	.header{
+		background-color: #494444;
+		color:white;
+	}
+	.bastaresim{
+		border-radius: 15px;  
+		width: 25%;
+		height: 70%; 
+	}
+	.col-sm-2{
+		margin-top: 0.7%;
+
+	}
+	.col-sm-1{
+		margin-top:0.7%;
+	}
+	#resmim{
+		border-radius: 250px;
+		width: 430px;
+		height: 420px;
+	}
+	.metin{
+		width: 90%;
+	}
+	.sayfaBaslik{
+		font-weight: 600;
+		font-size: 48px;
+		line-height: 90%;
+	}
+	.altBaslik{
+		color: #C4C4C4;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 32px;
+		display: flex;
+		align-items: center;
+	}
+	.hobiResimleri{
+		width: 350px;
+		height: 229px;
+		border-radius: 20px;
+	}
+	.katildigimEtkinlikler{
+		background: #F9F9F9;
+		border-radius: 12px;
+	}
+	.baslik{
+		font-family: Galano Grotesque;
+		font-style: normal;
+		font-weight: normal;
+		font-size:37px;
+		line-height: 90%;
+		color: #009999;
+	}
+	a{
+		text-decoration: none;
+	}
+
+</style>
