@@ -65,6 +65,85 @@
 				<div class="col-sm-12 col-md-4"> <iframe style="border-radius: 20px; width: 95% height:100%;" src="https://www.youtube.com/embed/K3x2Mo4Mei8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 				<div class="col-sm-12 col-md-4"> <iframe style="margin-bottom: 300px; border-radius: 20px; width: 95% height:100%;" src="https://www.youtube.com/embed/wBpVQln4MIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 			</div>
+			
+			
+			<div class="row" style="margin-bottom: 80px;">
+				<div class="baslikIcerik"><div class="col-sm-2 col-md-12"> Meteoroloji </div> </div>
+			</div>
+			<div class="row" style="padding-right: 7%;margin-bottom: 300px; margin-left: 5%;">
+				<div class="col-sm-6">
+					<div class="sehir" id="sehir1" style=" text-align: center;font-size: 30px;border-bottom: 1px solid #333333;margin-bottom:5px;">İstanbul</div>
+					<div class="sicaklik" id="sicaklik1" style="text-align: center;font-size: 23px;margin-bottom:3px;"></div>
+					<div class="durum" id="durum1" style="text-align: center;margin-bottom:3px;" ></div>
+					<div class="aralik" id="aralik1" style="text-align: center;font-size: 17px;margin-bottom:3px;"></div>
+					<div ><input type="button" class="butonaBas" id="buton1" value="Sıcaklığı Gör" onclick="istanbul()" style="margin-left:40.5%; margin-top:10px;font-size: 13px;color: white;background-color: #242526;  border-radius: 8px; width: 100px;" /> </div>
+				</div>
+				<div class="col-sm-6">
+					<div class="sehir" id="sehir2" style=" text-align: center;font-size: 30px;border-bottom: 1px solid #333333;margin-bottom:5px;">Giresun</div>
+					<div class="sicaklik" id="sicaklik2" style="text-align: center;font-size: 23px;margin-bottom:3px;"></div>
+					<div class="durum" id="durum2" style="text-align: center;margin-bottom:3px;"></div>
+					<div class="aralik" id="aralik2"  style="text-align: center;font-size: 17px;margin-bottom:3px;"></div>
+					<div ><input type="button" class="butonaBas" id="buton2" value="Sıcaklığı Gör" onclick="giresun()" style="margin-left:40.5%; margin-top:10px;font-size: 13px;color: white;background-color: #242526;  border-radius: 8px; width: 100px; " /> </div>
+				</div>
+				
+			</div>
+
+			<script>
+				const url = 'https://api.openweathermap.org/data/2.5/'
+				const key = 'e3c5d635b27c99412e63bf0571ea3493'				
+
+				function istanbul(){
+					let query=`${url}weather?q=${'istanbul'}&appid=${key}&units=metric&lang=tr`
+					fetch(query)
+					.then(weather => {
+						return weather.json()
+					})
+					.then(goster)
+				}
+
+				const goster = (result) => {
+					let sehir = document.querySelector('#sehir1')
+					sehir.innerText = `${result.name}`
+
+					let sicaklik = document.querySelector('#sicaklik1')
+					sicaklik.innerText = `${Math.round(result.main.temp)}°C`
+
+					let durum= document.querySelector('#durum1')
+					durum.innerText = result.weather[0].description
+
+					let aralik = document.querySelector('#aralik1')
+					aralik.innerText = `${Math.round(result.main.temp_min)}°c / ${Math.round(result.main.temp_max)}°c `
+
+				}
+
+				function giresun(){
+					let query = `${url}weather?q=${'giresun'}&appid=${key}&units=metric&lang=tr`
+					fetch(query)
+					.then(weather => {
+						return weather.json()
+					})
+					.then(goster2)
+				}
+
+				const goster2 = (result) => {
+					let sehir = document.querySelector('#sehir2')
+					sehir.innerText = `${result.name}`
+
+					let sicaklik = document.querySelector('#sicaklik2')
+					sicaklik.innerText = `${Math.round(result.main.temp)}°C`
+
+					let durum= document.querySelector('#durum2')
+					durum.innerText = result.weather[0].description
+
+					let aralik = document.querySelector('#aralik2')
+					aralik.innerText = `${Math.round(result.main.temp_min)}°c / ${Math.round(result.main.temp_max)}°c `
+
+				}
+			</script>
+			
+			
+			
+			
 
 
 			<!-- footer -->
