@@ -1,0 +1,162 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="stil.css">
+		<link rel="stylesheet" type="text/css" href="sayfam.css">
+		<title>İletişim</title>
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+		
+		<div class="container">
+			<div class="row" style="width: 102%; height: 11%; background-color: #242526; color: white; ">
+				<div class="col-sm-6 col-md-2 "style="padding-top:1.3%;text-align: center;"><img class="bastaresim" src="fotolar/baslik1.png" ><b>Osman</b>Aydın</div>
+				<div class="col-sm-6 col-md-1" style="padding-top:2.2%; text-align: left;"><a href="index.html">Hakkımda</a> </div>
+				<div class="col-sm-6 col-md-2" style="padding-top:2.2%; text-align: center;"><a href="ozgecmisim.html">Özgeçmişim</a> </div>
+				<div class="col-sm-6 col-md-1" style="padding-top:1%;text-align: center;"><a href="ilgiAlanlarim.html">İlgi Alanlarım</a> </div>
+				<div class="col-sm-6 col-md-1" style="padding-top:2.2%;text-align: right;"><a href="sehrim.html">Şehrim</a> </div>
+				<div class="col-sm-6 col-md-2" style="padding-top:2.2%;text-align: center;"><a href="takimim.html">Takımım</a> </div>
+				<div class="col-sm-6 col-md-1" style="padding-top:2.2%; text-align: left;"><a href="iletisim.html">İletişim</a> </div>
+				<div class="col-sm-6 col-md-2">
+					<form>
+						<button class="nav-link" style="margin-top: 9%; text-align: center; color:white;border: 2px solid #797C80; border-radius: 16px;background-color: #242526; width: 70%; "><a href="girisyap.html">Giriş Yap</a></button>
+					</form>
+				</div>
+			</div>
+
+			
+
+			
+			<div class="row" style="background-color: #F7F7F7;">
+
+
+
+
+
+
+				<script type="text/javascript">
+
+					function kontrolEt()
+					{
+						var ad= document.forms["formum"]["adi"].value;
+						if(ad=="")
+						{
+							alert("Lütfen bir isim giriniz.");
+							return false;
+						}
+						var soyad= document.forms["formum"]["soyadi"].value;
+						if(soyad=="")
+						{
+							alert("Lütfen bir soyad giriniz...");
+							return false;
+						}
+						var sifre= document.forms["formum"]["sifre"].value;
+						if(sifre=="")
+						{
+							alert("Lütfen bir parola giriniz...");
+							return false;
+						}
+						var dogTar= document.forms["formum"]["dogumTarihi"].value;
+						if(dogTar=="")
+						{
+							alert("Lütfen doğum tarihinizi giriniz...");
+							return false;
+						}
+
+						var metin=document.forms["formum"]["iletilecekMetin"].value;
+						if(metin=="")
+						{
+							alert("Lütfen iletilecek metni giriniz...");
+							return false;
+						}
+
+
+					}
+
+			</script>
+
+				<form name="formum" onsubmit="return kontrolEt()" action="iletisim.php" method="post"  style="margin-bottom: 45px;">
+					<div class="col-sm-12 col-md-6"> <label style="margin-top: 15%;" class="iletisimLabel" for="adi">Ad</label>   </div>
+					<div class="col-sm-12 col-md-6"> <input type="text" class="iletisimText" name="adi" id="adi" autofocus>  </div>
+					<div class="col-sm-12 col-md-6"> <label class="iletisimLabel" for="soyadi">Soyad</label>   </div>
+					<div class="col-sm-12 col-md-6"> <input type="text" class="iletisimText" name="soyadi" id="soyadi" >  </div>
+					<div class="col-sm-12 col-md-6"> <label class="iletisimLabel" for="email">E-Mail Adresi</label>   </div>
+					<div class="col-sm-12 col-md-6"> <input type="email" class="iletisimText" name="email" id="email" >  </div>
+					<div class="col-sm-12 col-md-6"> <label class="iletisimLabel" for="sifre">Parola</label>   </div>
+					<div class="col-sm-12 col-md-6"> <input type="password" class="iletisimText" name="sifre" >  </div>
+					<div class="col-sm-12 col-md-6"> <label class="iletisimLabel" for="dogumTarihi">Doğum Tarihi</label>   </div>
+					<div class="col-sm-12 col-md-6"> <input class="iletisimText" style="width: 50%;" type="date" name="dogumTarihi" id="dogumTarihi"></div>
+					<div class="col-sm-6 col-md-6"> <input class="iletisimLabel" type="radio" name="cinsiyet" value="erkek" required>Erkek 
+						<input class="iletisimLabel" type="radio" name="cinsiyet" value="kadin">Kadın</div> 
+
+					<div class="col-sm-12 col-md-6"> <label class="iletisimLabel" for="iletilecekMetin">İletilecek Metin</label>   </div>
+					<div class="col-sm-6 col-md-6"> <textarea class="iletisimText" style="margin-bottom: 80px; 
+					width: 380px; height: 200px;" name="iletilecekMetin" id="iletilecekMetin"></textarea></div>
+
+					<div class="col-sm-6 col-md-12 "> <input class="buton" style="font-size: 18px; background-color:  #BDBDBD; 
+					border-radius: 8px; margin-left: 35%; width: 180px;" type="reset" value="Temizle"><input class="buton" 
+					style="font-size: 18px; background-color: #333333; margin-left: 2%; border-radius: 8px; width: 180px;
+					margin-bottom: 300px; " type="submit" value="Gönder"></div>
+
+
+						
+
+				</form>
+
+
+			</div>
+			
+
+
+
+
+
+
+
+
+
+			<!-- footer -->
+			<div class="row" style="background-color:#242526; height: 110px; " > 
+						<div class="col-md-5" style="margin-left:12%; margin-top: 80px;">
+							<img src="fotolar/baslik.png" style="width: 25px; height: 25px;">
+							<a style="color: #797C80; background-color:#242526;" ><b>Osman</b>Aydın</a>
+							<img src="fotolar/phone.png" style="margin-left: 20px; border-radius: 10px; width: 15px; height: 15px;">
+							<a style=" color: #797C80; background-color:#242526; font-size: 12px;" >0537 769 58 08</a>
+							<img src="fotolar/mail.png" style="margin-left: 20px; border-radius: 10px; width: 15px; height: 15px;">
+							<a style=" color: #797C80; background-color:#242526; font-size: 12px;" >osmnaydin1453@gmail.com</a>
+						</div>
+						<div class="col-md-2" style="margin-left:15%; margin-top: 60px; ">
+							<form>
+						<button class="nav-link" style="margin-top: 2%; text-align: center; color:white;border: 2px solid #797C80; border-radius: 16px;background-color: #242526; width: 70%; "><a href="girisyap.html">Giriş Yap</a></button>
+					</form>
+						</div>
+
+			</div>
+			<div class="row">
+					<div class="col-sm-12" style="background-color:#242526; height: 15px;"><hr style=" margin-left:12% ;width:36%; border-bottom: 1px solid #797C80;"/></div>
+			</div>
+					
+			<div class="row" style="background-color:#242526; height: 80px; font-size: 12px;" >
+					<div class="col-md-5" style="margin-left:12%;margin-top:1.5%;"> 
+						<a style="color: #797C80" href="index.html">Hakkımda</a> 
+						<a style="margin-left:19px; color: #797C80" href="ozgecmisim.html">Özgeçmişim</a>
+						<a style="margin-left:19px; color: #797C80" href="ilgiAlanlarim.html">İlgi Alanlarım</a> 
+						<a style="margin-left:19px; color: #797C80" href="sehrim.html">Şehrim</a>
+						<a style="margin-left:19px; color: #797C80" href="takimim.html">Takımım</a>
+						<a style="margin-left:19px; color: #797C80" href="iletisim.html">İletişim</a>
+					</div>
+					<div class="col-md-5" style="text-align: left; margin-top:1%;">
+						<a style="margin-left:32%; color:#797C80">© 2021 tüm hakları saklıdır.</a>
+					</div>
+			</div>
+
+
+
+		</div>
+
+
+	</body>
+
+
+</html>
